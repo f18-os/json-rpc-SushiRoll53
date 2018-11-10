@@ -1,0 +1,12 @@
+{
+	"root":
+	{
+		"value" : 0,
+		"children" :
+			[
+				"leaf1" : [],
+				"leaf1" : [],
+				"leaf2" : []
+			]
+	}
+}
