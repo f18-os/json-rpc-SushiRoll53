@@ -4,9 +4,21 @@
 		"value" : 0,
 		"children" :
 			{
-				"leaf1" : [],
-				"leaf1" : [],
-				"leaf2" : []
+				"leaf1" : 
+				{
+					"value" : 0,
+					"children" : []
+				},
+				"leaf1" :
+				{
+					"value" : 0,
+					"children" : []
+				},
+				"leaf2" : 
+				{
+					"value" : 0,
+					"children" : []
+				},
 			}
 	}
 }
