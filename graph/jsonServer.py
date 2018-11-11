@@ -12,11 +12,11 @@ from bsonrpc.framing import (
 class ServerServices(object):
 
   @request
-  def increment(self, txtgraph):
-    graph = toGraph(txtgraph)
-    increment(graph)
-    strGraph = toString(graph)
-    return strGraph
+  def increment(self, strRoot):
+    root2 = toGraph(strRoot)
+    increment(root2)
+    root2 = toString(root2)
+    return root2
 
 # Quick-and-dirty TCP Server:
 ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -14,19 +14,43 @@ def increment(graph):
     for c in graph.children:
         increment(c)
 
-def toString(graph):
-    # Takes a graph and parse it in one long string, divide it by dollar sings $
-    data = graph.name+"$"+str(graph.val)+"$"
+def toString(graph, data = ""):#, level = 0, data = ""):
+    data += ("{ ")
+    data +=("\""+graph.name+"\" : { ")
+    data +=("\"value\" : "+str(graph.val)+" , ")
+    data +=("\"children\" : { ")
     for c in graph.children:
-        data += c.name+"$"+str(c.val)+"$"
+        data += toString(c)
+    data +=("} ,")
+    data +=(" } ")
     return data
 
+
 def toGraph(strGraph):
-    # Takes the string version of a graph and built a tree from it
-    splstr = strGraph.split("$")
-    root = node(splstr[0], [node(splstr[i]) for i in range(2,len(splstr)-1,2)])
-    root.val = int(splstr[1])
-    root.children[0] = root.children[1]
-    for i,c in zip(range(3,len(splstr)-1,2),root.children):
-        c.val = int(splstr[i])
+    listGraph = strGraph.split(" ")
+    toRevome = [":","{","}","",","]
+    cleanList = [item for item in listGraph if item not in toRevome]
+
+    leaf1 = node(cleanList[4][1:-1])
+    leaf1.val = int(cleanList[6])
+    leaf2 = node(cleanList[12][1:-1])
+    leaf2.val = int(cleanList[14])
+    root = node(cleanList[0][1:-1],[leaf1,leaf1,leaf2])
+    root.val = int(cleanList[2])
+
     return root
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+

@@ -25,6 +25,7 @@ root.show()
 strRoot = toString(root)
 # Execute in server:
 root2 = server.increment(strRoot)
+
 root2 = toGraph(root2)
 print("graph after increment")
 root2.show()
