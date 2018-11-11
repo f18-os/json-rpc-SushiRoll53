@@ -1,9 +1,9 @@
 ## jsonClient.py and jsonServer.py
 I implemented two new functions inside `node.py` 
 * toString(graph)
-  * Takes a graph and rearrange it and put it into one line string, so it can be read and re-build later with their corresponding values es connections.
+  * Takes a graph and rearrange it and put it into one line string, so it can be read and re-build later with their corresponding values es connections. The format is json file alike.
 * toGraph(string)
-  * Take a string that should be a graph in one line string and build a graph from the string.
+  * Take a string, json file alike, that should be a graph in one line string and build a graph from the string.
 
 Then I made `jsonClient.py` and `jsonServer.py`
 * `jsonClient.py`
@@ -16,6 +16,7 @@ Then I made `jsonClient.py` and `jsonServer.py`
 * `jsonServer.py`
   * Waits for a client's request
   * When increment is called
+    * Verifies if the string is like the one in `request.json` if so, it executes
     * it takes a string, parse it to a graph and calls increment from `node.py`
     * then parse the new incremented graph to a string again
     * it sends it back to the client
