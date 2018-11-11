@@ -14,7 +14,8 @@ def increment(graph):
     for c in graph.children:
         increment(c)
 
-def toString(graph, data = ""):#, level = 0, data = ""):
+def toString(graph, data = ""):
+    # Takes a graph and makes a json representation of it
     data += ("{ ")
     data +=("\""+graph.name+"\" : { ")
     data +=("\"value\" : "+str(graph.val)+" , ")
@@ -27,6 +28,9 @@ def toString(graph, data = ""):#, level = 0, data = ""):
 
 
 def toGraph(strGraph):
+    # Takes a json file and makes a graph out of it
+    # For time constrains and for the purpose of this lab
+    # I made this parser specific for this tree
     listGraph = strGraph.split(" ")
     toRevome = [":","{","}","",","]
     cleanList = [item for item in listGraph if item not in toRevome]

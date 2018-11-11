@@ -24,6 +24,7 @@ root.show()
 # Make graph into a string
 strRoot = toString(root)
 # Execute in server:
+fileW.write(strRoot)
 root2 = server.increment(strRoot)
 
 root2 = toGraph(root2)
